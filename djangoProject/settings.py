@@ -55,7 +55,9 @@ ROOT_URLCONF = 'djangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [
+            os.path.join(str(BASE_DIR), 'templates')
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(str(BASE_DIR), 'db.sqlite3'),
     }
 }
 
